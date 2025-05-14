@@ -329,3 +329,1131 @@ violations {
 2025-05-13 16:32:00,655 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
 2025-05-13 16:32:00,926 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
 2025-05-13 16:32:25,650 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-13 17:01:20,521 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-13 17:01:20,792 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-13 17:01:21,064 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-13 18:38:13,194 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-23446' coro=<RefreshAheadCache._schedule_refresh.<locals>._refresh_task() done, defined at C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py:152> exception=TransportError(ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'oauth2.googleapis.com\', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CF430>: Failed to resolve \'oauth2.googleapis.com\' ([Errno 11001] getaddrinfo failed)"))')))>
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000016BB45CF430>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CF430>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 186, in __call__
+    response = self.session.request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CF430>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 162, in _refresh_task
+    refresh_data = await refresh_task
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 117, in _perform_refresh
+    connection_info = await self._client.get_connection_info(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\client.py", line 278, in get_connection_info
+    self._credentials.refresh(requests.Request())
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\service_account.py", line 448, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CF430>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-05-13 18:38:13,215 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-23452' coro=<RefreshAheadCache._schedule_refresh.<locals>._refresh_task() done, defined at C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py:152> exception=TransportError(ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'oauth2.googleapis.com\', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB1FEEB00>: Failed to resolve \'oauth2.googleapis.com\' ([Errno 11001] getaddrinfo failed)"))')))>
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000016BB1FEEB00>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB1FEEB00>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 186, in __call__
+    response = self.session.request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB1FEEB00>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 162, in _refresh_task
+    refresh_data = await refresh_task
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 117, in _perform_refresh
+    connection_info = await self._client.get_connection_info(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\client.py", line 278, in get_connection_info
+    self._credentials.refresh(requests.Request())
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\service_account.py", line 448, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB1FEEB00>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-05-13 18:38:13,250 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-23451' coro=<RefreshAheadCache._schedule_refresh.<locals>._refresh_task() done, defined at C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py:152> exception=TransportError(ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'oauth2.googleapis.com\', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CD6F0>: Failed to resolve \'oauth2.googleapis.com\' ([Errno 11001] getaddrinfo failed)"))')))>
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000016BB45CD6F0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CD6F0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 186, in __call__
+    response = self.session.request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CD6F0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 162, in _refresh_task
+    refresh_data = await refresh_task
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 117, in _perform_refresh
+    connection_info = await self._client.get_connection_info(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\client.py", line 278, in get_connection_info
+    self._credentials.refresh(requests.Request())
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\service_account.py", line 448, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CD6F0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-05-13 18:38:13,282 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-23460' coro=<RefreshAheadCache._schedule_refresh.<locals>._refresh_task() done, defined at C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py:152> exception=TransportError(ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'oauth2.googleapis.com\', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CF460>: Failed to resolve \'oauth2.googleapis.com\' ([Errno 11001] getaddrinfo failed)"))')))>
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000016BB45CF460>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CF460>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 186, in __call__
+    response = self.session.request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CF460>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 162, in _refresh_task
+    refresh_data = await refresh_task
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 117, in _perform_refresh
+    connection_info = await self._client.get_connection_info(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\client.py", line 278, in get_connection_info
+    self._credentials.refresh(requests.Request())
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\service_account.py", line 448, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CF460>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-05-13 18:38:13,329 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-23461' coro=<RefreshAheadCache._schedule_refresh.<locals>._refresh_task() done, defined at C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py:152> exception=TransportError(ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'oauth2.googleapis.com\', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CC2B0>: Failed to resolve \'oauth2.googleapis.com\' ([Errno 11001] getaddrinfo failed)"))')))>
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000016BB45CC2B0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CC2B0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 186, in __call__
+    response = self.session.request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CC2B0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 162, in _refresh_task
+    refresh_data = await refresh_task
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 117, in _perform_refresh
+    connection_info = await self._client.get_connection_info(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\client.py", line 278, in get_connection_info
+    self._credentials.refresh(requests.Request())
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\service_account.py", line 448, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CC2B0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-05-13 18:38:13,369 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-23463' coro=<RefreshAheadCache._schedule_refresh.<locals>._refresh_task() done, defined at C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py:152> exception=TransportError(ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'oauth2.googleapis.com\', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB9E43C40>: Failed to resolve \'oauth2.googleapis.com\' ([Errno 11001] getaddrinfo failed)"))')))>
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000016BB9E43C40>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB9E43C40>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 186, in __call__
+    response = self.session.request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB9E43C40>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 162, in _refresh_task
+    refresh_data = await refresh_task
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 117, in _perform_refresh
+    connection_info = await self._client.get_connection_info(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\client.py", line 278, in get_connection_info
+    self._credentials.refresh(requests.Request())
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\service_account.py", line 448, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB9E43C40>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-05-14 04:32:13,602 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-23465' coro=<RefreshAheadCache._schedule_refresh.<locals>._refresh_task() done, defined at C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py:152> exception=TransportError(ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'oauth2.googleapis.com\', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CD300>: Failed to resolve \'oauth2.googleapis.com\' ([Errno 11001] getaddrinfo failed)"))')))>
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000016BB45CD300>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CD300>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 186, in __call__
+    response = self.session.request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CD300>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 162, in _refresh_task
+    refresh_data = await refresh_task
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 117, in _perform_refresh
+    connection_info = await self._client.get_connection_info(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\client.py", line 278, in get_connection_info
+    self._credentials.refresh(requests.Request())
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\service_account.py", line 448, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CD300>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-05-14 04:32:13,638 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-23469' coro=<RefreshAheadCache._schedule_refresh.<locals>._refresh_task() done, defined at C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py:152> exception=TransportError(ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'oauth2.googleapis.com\', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB9E43AC0>: Failed to resolve \'oauth2.googleapis.com\' ([Errno 11001] getaddrinfo failed)"))')))>
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000016BB9E43AC0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB9E43AC0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 186, in __call__
+    response = self.session.request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB9E43AC0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 162, in _refresh_task
+    refresh_data = await refresh_task
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 117, in _perform_refresh
+    connection_info = await self._client.get_connection_info(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\client.py", line 278, in get_connection_info
+    self._credentials.refresh(requests.Request())
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\service_account.py", line 448, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB9E43AC0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-05-14 04:32:13,620 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-23466' coro=<RefreshAheadCache._schedule_refresh.<locals>._refresh_task() done, defined at C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py:152> exception=TransportError(ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'oauth2.googleapis.com\', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CDC30>: Failed to resolve \'oauth2.googleapis.com\' ([Errno 11001] getaddrinfo failed)"))')))>
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000016BB45CDC30>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CDC30>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 186, in __call__
+    response = self.session.request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CDC30>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 162, in _refresh_task
+    refresh_data = await refresh_task
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 117, in _perform_refresh
+    connection_info = await self._client.get_connection_info(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\client.py", line 278, in get_connection_info
+    self._credentials.refresh(requests.Request())
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\service_account.py", line 448, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45CDC30>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-05-14 04:32:13,661 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-23486' coro=<RefreshAheadCache._schedule_refresh.<locals>._refresh_task() done, defined at C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py:152> exception=TransportError(ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'oauth2.googleapis.com\', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016B85D0C160>: Failed to resolve \'oauth2.googleapis.com\' ([Errno 11001] getaddrinfo failed)"))')))>
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000016B85D0C160>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016B85D0C160>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 186, in __call__
+    response = self.session.request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016B85D0C160>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 162, in _refresh_task
+    refresh_data = await refresh_task
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 117, in _perform_refresh
+    connection_info = await self._client.get_connection_info(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\client.py", line 278, in get_connection_info
+    self._credentials.refresh(requests.Request())
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\service_account.py", line 448, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016B85D0C160>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-05-14 04:32:13,677 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-23488' coro=<RefreshAheadCache._schedule_refresh.<locals>._refresh_task() done, defined at C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py:152> exception=TransportError(ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'oauth2.googleapis.com\', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB4533C40>: Failed to resolve \'oauth2.googleapis.com\' ([Errno 11001] getaddrinfo failed)"))')))>
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000016BB4533C40>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB4533C40>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 186, in __call__
+    response = self.session.request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB4533C40>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 162, in _refresh_task
+    refresh_data = await refresh_task
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 117, in _perform_refresh
+    connection_info = await self._client.get_connection_info(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\client.py", line 278, in get_connection_info
+    self._credentials.refresh(requests.Request())
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\service_account.py", line 448, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB4533C40>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-05-14 04:32:13,799 - asyncio - ERROR - Task exception was never retrieved
+future: <Task finished name='Task-23487' coro=<RefreshAheadCache._schedule_refresh.<locals>._refresh_task() done, defined at C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py:152> exception=TransportError(ConnectionError(MaxRetryError('HTTPSConnectionPool(host=\'oauth2.googleapis.com\', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45322C0>: Failed to resolve \'oauth2.googleapis.com\' ([Errno 11001] getaddrinfo failed)"))')))>
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 198, in _new_conn
+    sock = connection.create_connection(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\socket.py", line 967, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno 11001] getaddrinfo failed
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 787, in urlopen
+    response = self._make_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 488, in _make_request
+    raise new_e
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 464, in _make_request
+    self._validate_conn(conn)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 1093, in _validate_conn
+    conn.connect()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 704, in connect
+    self.sock = sock = self._new_conn()
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connection.py", line 205, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x0000016BB45322C0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\connectionpool.py", line 841, in urlopen
+    retries = retries.increment(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45322C0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 186, in __call__
+    response = self.session.request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\requests\adapters.py", line 700, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45322C0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 162, in _refresh_task
+    refresh_data = await refresh_task
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\instance.py", line 117, in _perform_refresh
+    connection_info = await self._client.get_connection_info(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\cloud\sql\connector\client.py", line 278, in get_connection_info
+    self._credentials.refresh(requests.Request())
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\service_account.py", line 448, in refresh
+    access_token, expiry, _ = _client.jwt_grant(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 299, in jwt_grant
+    response_data = _token_endpoint_request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 259, in _token_endpoint_request
+    response_status_ok, response_data, retryable_error = _token_endpoint_request_no_throw(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\oauth2\_client.py", line 192, in _token_endpoint_request_no_throw
+    response = request(
+  File "C:\Users\maxwe\anaconda3\envs\rag-eval\lib\site-packages\google\auth\transport\requests.py", line 192, in __call__
+    raise new_exc from caught_exc
+google.auth.exceptions.TransportError: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000016BB45322C0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+2025-05-14 11:57:27,558 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 11:57:42,385 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 11:57:42,657 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 11:57:42,948 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 12:40:54,842 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 12:40:57,735 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 12:40:58,013 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 12:40:58,288 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 12:41:13,591 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 12:51:00,868 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 12:51:03,654 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 12:51:03,925 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 12:51:04,200 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 12:51:14,404 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 12:51:46,518 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 12:51:46,793 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 12:51:47,056 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 12:52:00,609 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 12:58:07,198 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 12:58:10,203 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 12:58:11,539 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 12:58:11,865 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 13:01:11,858 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 13:01:14,663 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 13:01:14,926 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 13:01:15,187 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:05:16,136 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 14:05:16,420 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:05:16,701 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:07:55,625 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 14:07:58,329 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 14:07:58,587 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:07:58,840 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:08:46,068 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 14:08:49,846 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 14:08:50,152 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:08:50,462 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:09:06,575 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 14:16:33,855 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 14:16:36,753 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 14:16:37,022 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:16:37,297 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:16:58,348 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 14:22:05,805 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 14:22:06,072 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:22:06,342 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:22:23,271 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 14:22:54,559 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 14:23:27,166 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 14:23:57,079 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 14:24:43,121 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 14:25:33,860 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 14:25:34,126 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:25:34,399 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:26:03,233 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 14:26:50,341 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 14:29:27,914 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 14:33:36,264 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 14:33:36,518 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:33:36,775 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:33:58,607 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 14:48:21,950 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 14:59:07,925 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 14:59:08,183 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:59:08,441 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 14:59:29,851 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 15:01:35,863 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 15:02:07,683 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:02:07,946 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:02:08,207 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:02:21,828 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 15:03:05,385 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 15:03:37,959 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:03:38,229 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:03:38,501 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:03:57,445 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 15:05:06,787 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 15:21:32,078 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 15:21:34,950 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:21:35,216 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:21:35,483 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:23:29,438 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 15:23:32,232 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:23:32,504 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:23:32,777 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:23:45,184 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 15:25:52,318 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 15:25:55,230 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:25:55,507 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:25:55,784 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:26:08,647 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 15:27:05,858 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 15:27:08,730 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:27:08,987 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:27:09,244 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:27:25,254 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 15:27:46,383 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 15:29:17,504 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:29:17,770 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:29:18,040 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:29:46,412 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 15:31:17,200 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 15:46:20,944 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 15:46:23,783 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:46:24,041 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:46:24,298 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:47:25,239 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 15:52:05,720 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 15:52:08,747 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:52:09,011 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:52:09,291 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:53:02,076 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 15:53:05,192 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:53:05,461 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:53:05,731 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:53:45,377 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 15:53:48,304 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:53:48,592 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:53:48,874 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:54:18,155 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:54:18,450 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:54:18,733 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:54:59,889 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:55:00,183 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:55:00,452 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:57:10,918 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 15:57:17,776 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:57:18,046 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:57:18,322 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:57:42,009 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 15:59:05,768 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 15:59:11,853 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 15:59:12,111 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 15:59:12,376 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:01:29,511 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:01:29,765 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:01:30,018 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:01:59,101 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:01:59,366 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:01:59,636 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:02:43,856 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 16:02:49,782 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:02:50,041 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:02:50,298 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:04:03,621 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 16:04:06,391 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:04:06,675 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:04:06,960 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:05:45,088 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 16:05:47,828 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:05:48,091 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:05:48,357 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:06:35,209 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 16:06:39,189 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:06:39,456 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:06:39,726 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:07:15,842 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:07:16,100 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:07:16,357 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:08:16,675 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 16:08:19,487 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:08:19,750 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:08:20,009 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:09:41,594 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 16:09:47,428 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:09:47,683 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:09:47,941 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:10:06,662 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 16:15:27,511 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:15:27,770 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:15:28,029 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:16:02,421 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 16:16:24,639 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 16:16:53,970 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 16:22:20,104 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 16:22:22,971 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:22:23,239 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:22:23,505 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:22:30,638 - langchain_google_genai.chat_models - WARNING - Retrying langchain_google_genai.chat_models._chat_with_retry.<locals>._chat_with_retry in 2.0 seconds as it raised ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_input_token_count"
+  quota_id: "GenerateContentInputTokensPerModelPerMinute-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-pro"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 30
+}
+].
+2025-05-14 16:22:52,045 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 16:22:54,929 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:22:55,193 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:22:55,455 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:23:29,247 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 16:39:09,923 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 16:39:12,773 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:39:13,029 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:39:13,286 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:39:26,438 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 16:40:01,539 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 16:40:32,662 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 16:40:48,556 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:40:48,819 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:40:49,087 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:41:09,914 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 16:42:48,983 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 16:42:51,734 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:42:52,005 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:42:52,276 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:43:36,645 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 16:44:24,462 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333 "HTTP/1.1 200 OK"
+2025-05-14 16:44:27,396 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:44:27,660 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:44:27,926 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:44:38,459 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 16:45:01,294 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 16:45:32,574 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 16:49:01,493 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:49:01,757 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:49:02,035 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:49:26,665 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:49:26,922 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:49:27,193 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:49:48,177 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"
+2025-05-14 16:50:17,944 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections "HTTP/1.1 200 OK"
+2025-05-14 16:50:18,204 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:50:18,467 - httpx - INFO - HTTP Request: GET https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text "HTTP/1.1 200 OK"
+2025-05-14 16:50:42,683 - httpx - INFO - HTTP Request: POST https://73e9e4e2-a9ce-4aa8-ae1d-fac6e5660e33.us-west-2-0.aws.cloud.qdrant.io:6333/collections/manual-text/points/query "HTTP/1.1 200 OK"

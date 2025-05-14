@@ -262,7 +262,7 @@ def build_graph(llm, vector_store, k) -> StateGraph:
             message for message in state["messages"] if message.type in ("human", "system") or (message.type == "ai" and not message.tool_calls)
         ]
         prompt = [SystemMessage(content=system_message_content)] + conversation_messages
-        response = llm.invoke(prompt, config={"configurable": {"thread_id": f"{st.session_state.thread_id}"}})
+        response = llm.invoke(prompt)
         response.additional_kwargs["images"] = images
         response.additional_kwargs["videos"] = videos
         generate_time = time.time() - start_time
